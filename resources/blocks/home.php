@@ -8,5 +8,7 @@
 		Welcome
 		<br>
 		<a href="/logout.php">Log out</a>
+		<br>
+		<a href="/resources/blocks/comps/writePost.php">New Post</a>
 	</body>
 </html>
