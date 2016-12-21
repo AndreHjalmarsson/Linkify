@@ -19,6 +19,7 @@ $loggedIn = checkLogin($connection);
 	  if ($loggedIn) {
             require("resources/blocks/home.php");
         } else {
+				require("resources/blocks/comps/allPosts.php");
             require("resources/blocks/authentication.php");
         }
 
