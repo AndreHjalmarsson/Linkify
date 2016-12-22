@@ -7,10 +7,14 @@
 	<body>
 		Welcome
 		<br>
+		<a href="/settings.php">Profile</a>
+		<br>
 		<a href="/logout.php">Log out</a>
 		<br>
 		<a href="/resources/blocks/comps/writePost.php">New Post</a>
 		<br>
-		<?php require("resources/blocks/comps/allPosts.php"); ?>
+		<a href="/resources/lib/myPosts.php">My own</a>
+		<br>
+		<?php require("resources/lib/allPosts.php"); ?>
 	</body>
 </html>
