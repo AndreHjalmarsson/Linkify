@@ -15,3 +15,8 @@
 .messageContent {
   background: #1da1f2;
 }
+
+.placeholderAvatar {
+	height: 100px;
+	width: 100px;
+}

@@ -61,6 +61,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         header("Location: /settings.php");
         die();
+    } else if ($action === "changeAvatar") {
+
+        if (!validateUserPassword($connection, $_SESSION["login"]["uid"], $_POST["password"])) {
+            $_SESSION["error"] = "Invalid password.";
+            header("Location: /resources/blocks/settings/changeAvatar.php");
+            die();
+        }
+
+        if (!file_exists("../img/users")) {
+            mkdir("../img/users");
+        }
+        if (!file_exists("../img/users/{$_SESSION["login"]["uid"]}")) {
+            mkdir("../img/users/{$_SESSION["login"]["uid"]}");
+        }
+
+        if ($_FILES["avatar"]["error"] === 0) {
+            uploadImage($connection, $_FILES["avatar"], "avatar", $_SESSION["login"]["uid"]);
+        }
+
+        header("Location: /resources/blocks/settings/changeAvatar.php");
+        die();
     }
 
 

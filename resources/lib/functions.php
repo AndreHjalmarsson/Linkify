@@ -151,8 +151,6 @@ function uploadImage ($connection, $imageInfo, $type, $uid)
     } else {
         if ($type === "avatar") {
             dbPost($connection, "UPDATE users SET avatar = '$name' WHERE id = '$uid'");
-        } else if ($type === "cover") {
-            dbPost($connection, "UPDATE users SET cover = '$name' WHERE id = '$uid'");
         }
     }
 }

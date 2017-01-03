@@ -7,6 +7,7 @@ require("resources/lib/functions.php");
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="/resources/css/style.css">
 		<title></title>
 	</head>
 	<body>
@@ -19,16 +20,22 @@ require("resources/lib/functions.php");
 		$users = dbGet($connection, "SELECT * FROM users WHERE id = '$uid';");
 
 		foreach($users as $user) {
-			echo "Name: " . $user["name"] . "<br>" . "Username: " . $user["username"] . "<br>" . "Email: " .
-			$user["email"] . "<br>" . '<a href='."/resources/blocks/settings/changeInfo.php".'>Edit information</a>'.
-			"<br>" . '<a href='."/resources/blocks/settings/changePassword.php".'>Change password</a>' . "<br>";
-
-
+			$name = $user["name"];
+			$username = $user["username"];
+			$email = $user["email"];
+			$avatar = $user["avatar"];
 		}
-
 
         require("resources/blocks/comps/error.php");
         require("resources/blocks/comps/message.php");
 		?>
+		Name: <?= $name; ?> <br>
+		Username: <?= $username; ?> <br>
+		Email: <?= $email; ?> <br>
+		<a href="/resources/blocks/settings/changeInfo.php">Edit info</a> <br>
+		<a href="/resources/blocks/settings/changePassword.php">Change Password</a> <br>
+		<div class="placeholderAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $avatar; ?>" style="width: 100%; height: 100%;" alt=""></div> <br>
+		<a href="/resources/blocks/settings/changeAvatar.php">Change avatar</a> <br>
+
 	</body>
 </html>
