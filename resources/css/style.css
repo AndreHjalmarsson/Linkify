@@ -30,3 +30,9 @@ h4 {
 .postContent {
 	display: inline-block;
 }
+.hide {
+	display: none;
+}
+.link {
+	display: inline-block;
+}
