@@ -1,10 +1,15 @@
 "use strict";
 
 let comments = document.getElementsByClassName("comments");
-let
+let content = document.getElementById("content");
 
-let myFunction = function() {
-    console.log("attribute");
+var myFunction = function() {
+    if (content.className === "hide") {
+		 content.className = "";
+	 }
+	 else {
+		 content.className = "hide";
+	 }
 };
 
 for (var i = 0; i < comments.length; i++) {

@@ -22,10 +22,10 @@
 			<div class="postContent">
 				<h4><?= $postTitle; ?></h4> <br>
 				<a href="#"><?= $postContent; ?></a><br>
-				<a class="comments" href="#">commets</a>
+				<a class="comments" href="#">comments</a>
 			</div>
 
-			<div class="hide">
+			<div class="hide" id="content">
 				werer
 			</div>
 			<br><br>
