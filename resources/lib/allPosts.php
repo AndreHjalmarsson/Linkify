@@ -7,6 +7,11 @@
 	<body>
 		<?php
 		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
+		$commentInfo = dbGet($connection, "SELECT * FROM comments;");
+		foreach ($commentInfo as $comments) {
+			$commentsContent = $comments["content"];
+			$commentsid = $comments["uid"];
+		}
 
 		foreach($postInfo as $post) {
 			$postContent = $post["content"];
@@ -26,7 +31,12 @@
 			</div>
 
 			<div class="hide" id="content">
-				werer
+				<?= $commentsContent; ?>
+				<form action="resources/lib/insertComment.php" method="POST">
+					<input type="hidden" name="commentAction" value="createComment">
+				   <textarea name="content" placeholder="Add your text here"></textarea>
+				   <button type="submit">Comment</button>
+				</form>
 			</div>
 			<br><br>
 
