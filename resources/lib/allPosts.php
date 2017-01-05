@@ -29,7 +29,7 @@
 			<div class="hide" id="content">
 				<?php
 				foreach ($commentInfo as $comments) {
-					echo $comments["content"] . "<br>";
+					echo $comments["content"] . " - " . $comments["name"] . "<br>";
 				}
 				 ?>
 				<br>
