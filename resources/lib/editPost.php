@@ -14,7 +14,8 @@ foreach ($posts as $post) {
 
 <form method="POST" action="/resources/lib/insertEditPost.php">
 	<input type="hidden" name="editAction" value="editPost">
-	<input type="text" name="title" value="<?= $currentTitle ?>">
-   <textarea name="content"><?= $currentContent ?></textarea>
-   <button type="submit">Post</button>
+	<input type="hidden" name="urlid" value="<?= $urlPostid ?>">
+	<input type="text" name="newTitle" value="<?= $currentTitle ?>">
+   <textarea name="newContent"><?= $currentContent ?></textarea>
+   <button type="submit">Edit</button>
 </form>

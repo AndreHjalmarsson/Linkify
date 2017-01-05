@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require("functions.php");
@@ -10,17 +11,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $action = $_POST["editAction"];
     if ($action === "editPost") {
-        if (!isset($_POST["content"]) || empty($_POST["content"])) {
-            $_SESSION["error"] = "Missing post content. Please provide enough content to share.";
+        if (empty($_POST["newContent"]) || empty($_POST["newTitle"])) {
+            $_SESSION["error"] = "Something missing.";
             header("Location: /");
             die();
         }
 
-        $content = mysqli_real_escape_string($connection, $_POST["content"]);
+        $content = mysqli_real_escape_string($connection, $_POST["newContent"]);
         $uid = $_SESSION["login"]["uid"];
         $date = date("Y-m-d H:i:s");
-		  $title = $_POST["title"];
-        dbPost($connection, "INSERT INTO posts (uid, content, published, title) VALUES ('$uid', '$content', '$date', '$title')");
+		  $title = $_POST["newTitle"];
+		  $urlid = $_POST["urlid"];
+        dbPost($connection, "UPDATE posts SET uid = '$uid', content = '$content', published = '$date', title = '$title' WHERE postid = '$urlid';)");
         header("Location: /");
         die();
     }
