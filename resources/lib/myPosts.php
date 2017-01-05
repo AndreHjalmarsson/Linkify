@@ -33,7 +33,21 @@ require("functions.php");
 				<a class="comments" href="#">comments</a>
 			</div>
 			<br>
-			<a href="editPost.php">Edit</a>
+			<a href="editPostids/<?= $postid ?>.php">Edit</a>
+			<?php
+			$myfile = fopen("editPostids/$postid.php", "w");
+			// $txt = "<form action='.insertEditPost.php. 'method='.POST.'>
+			// 	<input type='.text. 'name='.title. 'placeholder='Add title'>
+			// 	<textarea name='.content. 'placeholder='.Add your text here.'></textarea>
+			// 	<button type='.submit.'>Post</button>
+			// </form>";
+			$txt = "<?php
+			require('../../../resources/lib/editPost.php');
+			 ?>";
+			fwrite($myfile, $txt);
+  			fclose($myfile);
+
+			 ?>
 
 			<div class="hide" id="content">
 				<?php
