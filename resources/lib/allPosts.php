@@ -18,28 +18,31 @@
 			$uid = $post["uid"];
 			$postid = $post["postid"];
 			?>
+			<div class="postContainer">
+				<div class="placeholderAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
+				<div class="postContent">
+					<h4><?= $postTitle; ?></h4> <br>
+					<a href="#"><?= $postContent; ?></a><br>
+					<a class="comments" href="#">comments</a>
+				</div>
 
-			<div class="placeholderAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
-			<div class="postContent">
-				<h4><?= $postTitle; ?></h4> <br>
-				<a href="#"><?= $postContent; ?></a><br>
-				<a class="comments" href="#">comments</a>
+				<div class="hide" id="content">
+					<?php
+					foreach ($commentInfo as $comments) {
+						echo $comments["content"] . " - " . $comments["name"] . "<br>";
+					}
+					 ?>
+					<br>
+					<form action="resources/lib/insertComment.php" method="POST">
+						<input type="hidden" name="commentAction" value="createComment">
+					   <textarea name="content" placeholder="Add your text here"></textarea>
+					   <button type="submit">Comment</button>
+					</form>
+				</div>
+				<br><br>
+
 			</div>
 
-			<div class="hide" id="content">
-				<?php
-				foreach ($commentInfo as $comments) {
-					echo $comments["content"] . " - " . $comments["name"] . "<br>";
-				}
-				 ?>
-				<br>
-				<form action="resources/lib/insertComment.php" method="POST">
-					<input type="hidden" name="commentAction" value="createComment">
-				   <textarea name="content" placeholder="Add your text here"></textarea>
-				   <button type="submit">Comment</button>
-				</form>
-			</div>
-			<br><br>
 
 		<?php
 		}

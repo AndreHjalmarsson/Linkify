@@ -9,3 +9,11 @@ if ($loggedIn) {
 $error = $_SESSION["error"] ?? "";
 $message = $_SESSION["message"] ?? "";
  ?>
+
+<header>
+	<div class="container">a
+		<div class="logo">a
+		</div>
+
+	</div>
+</header>
