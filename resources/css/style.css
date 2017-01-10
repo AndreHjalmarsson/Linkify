@@ -15,6 +15,9 @@
 .messageContent {
   background: #1da1f2;
 }
+body, button, input {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
 
 .placeholderAvatar {
 	height: 100px;
@@ -52,13 +55,26 @@ header {
 }
 .login {
 	float: right;
+	margin: 20px 0px 20px 0px;
+	border: 1px solid grey;
+	padding-bottom: 0px;
+}
+.login button {
+	margin: 0px 10px 0px 0px;
+}
+.login input {
+	margin: 5px;
+}
+.login label {
+	margin-bottom: 6px;
 }
 .register {
 	float: right;
 }
 .postContainer {
 	display: inline-block;
-
+	margin-top: 50px;
+	margin-left: 30px;
 }
 .headerContainer {
 	width: 100%;

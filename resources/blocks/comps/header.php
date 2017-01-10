@@ -12,7 +12,8 @@ $message = $_SESSION["message"] ?? "";
 
 <header>
 	<div class="headerContainer">
-		<div class="logo">a
+		<div class="logo">
+			<h1>L</h1>
 		</div>
 
 	</div>
