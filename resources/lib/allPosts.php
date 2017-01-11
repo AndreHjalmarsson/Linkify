@@ -6,6 +6,9 @@
 	</head>
 	<body>
 		<div class="postContainer">
+			<div class="postMenu">
+
+			</div>
 		<?php
 		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
 		$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
@@ -26,21 +29,20 @@
 						<a href="#"><?= $postContent; ?></a><br>
 						<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
 					</div>
-
-				<div class="hide" id="content">
-					<?php
-					foreach ($commentInfo as $comments) {
-						echo $comments["content"] . " - " . $comments["name"] . "<br>";
-					}
-					 ?>
-					<br>
-					<form action="resources/lib/insertComment.php" method="POST">
-						<input type="hidden" name="commentAction" value="createComment">
-					   <textarea name="content" placeholder="Add your text here"></textarea>
-					   <button type="submit">Comment</button>
-					</form>
-				</div>
 				<br><br>
+			</div>
+			<div class="hide" id="content">
+				<?php
+				foreach ($commentInfo as $comments) {
+					echo $comments["content"] . " - " . $comments["name"] . "<br>";
+				}
+				 ?>
+				<br>
+				<form action="resources/lib/insertComment.php" method="POST">
+					<input type="hidden" name="commentAction" value="createComment">
+					<textarea name="content" placeholder="Add your text here"></textarea>
+					<button type="submit">Comment</button>
+				</form>
 			</div>
 		<?php
 		}
