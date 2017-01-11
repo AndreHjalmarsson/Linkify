@@ -19,12 +19,13 @@
 			$uid = $post["uid"];
 			$postid = $post["postid"];
 			?>
-				<div class="placeholderAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
-				<div class="postContent">
-					<h4><?= $postTitle; ?></h4> <br>
-					<a href="#"><?= $postContent; ?></a><br>
-					<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
-				</div>
+			<div class="postWrapper">
+				<div class="postAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
+					<div class="postContent">
+						<h4><?= $postTitle; ?></h4> <br>
+						<a href="#"><?= $postContent; ?></a><br>
+						<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
+					</div>
 
 				<div class="hide" id="content">
 					<?php
@@ -40,6 +41,7 @@
 					</form>
 				</div>
 				<br><br>
+			</div>
 		<?php
 		}
 		?>

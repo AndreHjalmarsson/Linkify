@@ -15,6 +15,14 @@ $message = $_SESSION["message"] ?? "";
 		<div class="logo">
 			<h1>L</h1>
 		</div>
-
+		<ul>
+			<li><a href="#">COMMUNITY</a></li>
+			<li><a href="#">CONTACT US</a></li>
+			<li><a href="#">STORE</a></li>
+		</ul>
+	</div>
+	<div class="lowerHeader">
+		<h1>LINKIFY</h1>
+		<p>Share your thoughts</p>
 	</div>
 </header>

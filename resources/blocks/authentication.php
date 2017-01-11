@@ -10,15 +10,8 @@
 			<button type="submit" class="login">Log in</button>
 		</form>
 	</div>
-
-	<!-- Register form -->
-	<div class="register">
-		<form action="/resources/lib/register.php" method="POST">
-			<input type="text" name="fullname" placeholder="Full name"><br>
-			<input type="text" name="username" placeholder="Username"><br>
-			<input type="email" name="email" placeholder="Email"><br>
-			<input type="password" name="password" placeholder="Password"><br>
-			<button type="submit" class="register">Register for Linkify</button>
-		</form>
+	<div class="registerLink">
+		<p>Not a member? Register below.</p>
+		<a href="resources/lib/registerForm.php">Register</a>
 	</div>
 </div>
