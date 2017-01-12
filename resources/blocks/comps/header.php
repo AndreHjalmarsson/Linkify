@@ -16,10 +16,22 @@ $message = $_SESSION["message"] ?? "";
 			<h1>L</h1>
 		</div>
 		<ul>
-			<li><a href="#">COMMUNITY</a></li>
-			<li><a href="#">CONTACT US</a></li>
-			<li><a href="#">STORE</a></li>
+			<div class="mainLinks">
+				<li><a href="/">HOME</a></li>
+				<li><a href="#">COMMUNITY</a></li>
+				<li><a href="#">CONTACT US</a></li>
+				<li><a href="#">STORE</a></li>
+			</div>
 		</ul>
+			<?php if ($loggedIn) {?>
+				<div class="dropdown">
+					<button id="dropBtn">Dropdown</button>
+					  <div id="dropContent" class="hide">
+						  	<a href="/settings.php">Profile</a>
+							<a href="/logout.php">Log out</a>
+					  </div>
+				</div>
+			<?php } ?>
 	</div>
 	<div class="lowerHeader">
 		<h1>LINKIFY</h1>

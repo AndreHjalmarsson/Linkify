@@ -5,11 +5,6 @@
 		<title></title>
 	</head>
 	<body>
-		Welcome
-		<br>
-		<a href="/settings.php">Profile</a>
-		<br>
-		<a href="/logout.php">Log out</a>
 		<br>
 		<a href="/resources/blocks/comps/writePost.php">New Post</a>
 		<br>

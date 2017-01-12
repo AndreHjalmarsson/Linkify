@@ -74,11 +74,12 @@ header {
 .login {
 	float: right;
 	margin: 20px 0px 5px 0px;
-	border: 1px solid grey;
+	border: 2px solid #2B333E;
 	padding-bottom: 0px;
 }
 .login button {
-	margin: 0px 10px 0px 0px;
+	margin-right: 75px;
+	margin-top: 0px;
 }
 .login input {
 	/*background-color: #e6eeff;*/
@@ -110,6 +111,23 @@ text-align: center;
 	margin-bottom: 5px;
 	background-color: #191D26;
 }
+.voteWrapper {
+	background-color: #12151A;
+	display: inline-block;
+	float: left;
+	height: 100px;
+	width: 40px;
+}
+.voteWrapper p {
+	margin: 8px;
+	margin-left: 10px;
+}
+#upvote {
+	margin-top: 18px;
+}
+#downvote {
+	margin-bottom: 30px;
+}
 .postWrapper .postAvatar {
 	height: 55px;
 	width: 55px;
@@ -126,8 +144,9 @@ text-align: center;
 .postMenu {
 	background-color: #191D26;
 	height: 50px;
-	width: 100%;
+	width: 96.3%;
 	margin-bottom: 7px;
+	margin-left: 40px;
 }
 .postMenu li {
 	display: inline-block;
@@ -144,7 +163,7 @@ text-align: center;
 	position: relative;
 	box-shadow: 4px 4px 4px #12151A;
 }
-.headerContainer ul li {
+.mainLinks li {
 	display: inline-block;
 	margin-top: 60px;
 	margin-left: 10px;
@@ -159,6 +178,7 @@ text-align: center;
 
 .headerContainer ul {
 	margin: 0px;
+	display: inline-block;
 }
 .lowerHeader {
 	width: 100%;
@@ -172,4 +192,13 @@ text-align: center;
 }
 .logo {
 	float: left;
+}
+.dropdown {
+	float: right;
+	display: inline-block;
+	margin-top: 30px;
+}
+.dropdown-content a {
+    color: green;
+	 display: block;
 }

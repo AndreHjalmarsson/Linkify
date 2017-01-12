@@ -3,7 +3,7 @@
 let comments = document.getElementsByClassName("comments");
 let content = document.getElementById("content");
 
-var myFunction = function() {
+let myFunction = function() {
     if (content.className === "hide") {
 		 content.className = "";
 	 }
@@ -12,6 +12,28 @@ var myFunction = function() {
 	 }
 };
 
-for (var i = 0; i < comments.length; i++) {
+for (let i = 0; i < comments.length; i++) {
     comments[i].addEventListener('click', myFunction, false);
 }
+
+let rating = document.getElementById("rating");
+let posts = document.getElementById("postC");
+
+rating.addEventListener('click', function(event) {
+	if (posts.className === "postContainer") {
+		posts.className = "hide";
+	}
+
+});
+
+let dropBtn = document.getElementById("dropBtn");
+let dropContent = document.getElementById("dropContent");
+
+dropBtn.addEventListener('click', function(event) {
+	if (dropContent.className === "dropdown-content") {
+		dropContent.className = "hide";
+	} else if (dropContent.className === "hide") {
+		dropContent.className = "dropdown-content";
+	}
+
+});

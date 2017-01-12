@@ -154,3 +154,52 @@ function uploadImage ($connection, $imageInfo, $type, $uid)
         }
     }
 }
+
+function upVotePosts($connection, $loggedIn)
+{
+	if (isset($_GET["vote"])) {
+		if ($_GET["vote"] === "up") {
+			if ($loggedIn) {
+				$voterId = $_SESSION["login"]["uid"];
+				$votePostId = $_GET["id"];
+
+				dbPost($connection, "INSERT INTO upvote (post_id, user_id) VALUES ('$votePostId', '$voterId')");
+			}
+		}
+		header("Location: /");
+		die();
+	}
+}
+
+function downVotePosts($connection, $loggedIn)
+{
+	if (isset($_GET["vote"])) {
+		if ($_GET["vote"] === "down") {
+			if ($loggedIn) {
+				$voterId = $_SESSION["login"]["uid"];
+				$votePostId = $_GET["id"];
+
+				dbPost($connection, "INSERT INTO downvote (post_id, user_id) VALUES ('$votePostId', '$voterId')");
+			}
+		}
+		header("Location: /");
+		die();
+	}
+}
+
+function countVotes($connection, $postid)
+{
+   $upvotes = dbGet($connection, "SELECT COUNT(post_id) FROM upvote WHERE post_id = '$postid'");
+	foreach($upvotes as $upvote) {
+		$nrOfUpvotes = $upvote["COUNT(post_id)"];
+	}
+
+	$downvotes = dbGet($connection, "SELECT COUNT(post_id) FROM downvote WHERE post_id = '$postid'");
+	foreach($downvotes as $downvote) {
+		$nrOfDownvotes = $downvote["COUNT(post_id)"];
+	}
+
+	$nrOfVotes = $nrOfUpvotes - $nrOfDownvotes;
+
+	echo $nrOfVotes;
+}

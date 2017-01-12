@@ -7,7 +7,11 @@
 	<body>
 		<div class="postContainer">
 			<div class="postMenu">
-
+				<ul>
+					<li><a href="#" id="recent">Recent</a></li>
+					<li><a href="#" id="rating">Rating</a></li>
+					<li><a href="#" id="other">Other</a></li>
+				</ul>
 			</div>
 		<?php
 		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
@@ -23,6 +27,11 @@
 			$postid = $post["postid"];
 			?>
 			<div class="postWrapper">
+				<div class="voteWrapper">
+					<a href="/?vote=up&id=<?php echo $postid; ?>"><img id="upvote" src="/resources/img/images/uparrow.png" style="width: 30px; height: 12px;" alt=""></a>
+					<p><?php countVotes($connection, $postid) ?></p>
+					<a href="/?vote=down&id=<?php echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 30px; height: 12px;" alt=""></a>
+				</div>
 				<div class="postAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
 					<div class="postContent">
 						<h4><?= $postTitle; ?></h4> <br>
@@ -46,6 +55,8 @@
 			</div>
 		<?php
 		}
+		upVotePosts($connection, $loggedIn);
+		downVotePosts($connection, $loggedIn);
 		?>
 		</div>
 		<script src="resources/js/script.js"></script>
