@@ -129,10 +129,20 @@ text-align: center;
 	width: 100%;
 	margin-bottom: 7px;
 }
+.postMenu li {
+	display: inline-block;
+	margin-top: 25px;
+	margin-right: 35px;
+}
+.postMenu ul {
+	margin: 0px;
+}
 .headerContainer {
 	width: 100%;
 	height: 100px;
 	background-color: #2B333E;
+	position: relative;
+	box-shadow: 4px 4px 4px #12151A;
 }
 .headerContainer ul li {
 	display: inline-block;
