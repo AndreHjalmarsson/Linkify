@@ -28,9 +28,9 @@
 			?>
 			<div class="postWrapper">
 				<div class="voteWrapper">
-					<a href="/?vote=up&id=<?php echo $postid; ?>"><img id="upvote" src="/resources/img/images/uparrow.png" style="width: 30px; height: 12px;" alt=""></a>
+					<a href="/?vote=up&id=<?php echo $postid; ?>"><img id="upvote" src="/resources/img/images/uparrow.png" style="width: 25px; height: 10px;" alt=""></a>
 					<p><?php countVotes($connection, $postid) ?></p>
-					<a href="/?vote=down&id=<?php echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 30px; height: 12px;" alt=""></a>
+					<a href="/?vote=down&id=<?php echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 25px; height: 10px;" alt=""></a>
 				</div>
 				<div class="postAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
 					<div class="postContent">
@@ -55,8 +55,7 @@
 			</div>
 		<?php
 		}
-		upVotePosts($connection, $loggedIn);
-		downVotePosts($connection, $loggedIn);
+		votePosts($connection, $loggedIn);
 		?>
 		</div>
 		<script src="resources/js/script.js"></script>

@@ -155,7 +155,7 @@ function uploadImage ($connection, $imageInfo, $type, $uid)
     }
 }
 
-function upVotePosts($connection, $loggedIn)
+function votePosts($connection, $loggedIn)
 {
 	if (isset($_GET["vote"])) {
 		if ($_GET["vote"] === "up") {
@@ -165,16 +165,7 @@ function upVotePosts($connection, $loggedIn)
 
 				dbPost($connection, "INSERT INTO upvote (post_id, user_id) VALUES ('$votePostId', '$voterId')");
 			}
-		}
-		header("Location: /");
-		die();
-	}
-}
-
-function downVotePosts($connection, $loggedIn)
-{
-	if (isset($_GET["vote"])) {
-		if ($_GET["vote"] === "down") {
+		} else if ($_GET["vote"] === "down") {
 			if ($loggedIn) {
 				$voterId = $_SESSION["login"]["uid"];
 				$votePostId = $_GET["id"];
@@ -186,6 +177,7 @@ function downVotePosts($connection, $loggedIn)
 		die();
 	}
 }
+
 
 function countVotes($connection, $postid)
 {
