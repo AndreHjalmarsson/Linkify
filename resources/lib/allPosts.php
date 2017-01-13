@@ -40,10 +40,19 @@
 					</div>
 				<br><br>
 			</div>
-			<div class="hide" id="content">
+			<div id="content" class="hide">
 				<?php
 				foreach ($commentInfo as $comments) {
-					echo $comments["content"] . " - " . $comments["name"] . "<br>";
+					$commentUid = $comments["uid"];
+					$commentAvatar = $comments["avatar"];
+					?>
+					<div class="commentWrapper">
+						<div class="commentAvatar">
+							<img src="/resources/img/users/<?= $commentUid ?>/<?= $commentAvatar; ?>" style="width: 100%; height: 100%;" alt="">
+						</div>
+						<?= $comments["content"]; ?>
+					</div>
+			<?php
 				}
 				 ?>
 				<br>

@@ -1,3 +1,16 @@
+let dropBtn = document.getElementById("dropBtn");
+let dropContent = document.getElementById("dropContent");
+
+dropBtn.addEventListener('click', function(event) {
+	if (dropContent.className === "dropdown-content") {
+		dropContent.className = "hide";
+	} else if (dropContent.className === "hide") {
+		dropContent.className = "dropdown-content";
+	}
+
+});
+
+
 let infoTag = document.getElementById("info");
 let passwordTag = document.getElementById("password");
 let avatarTag = document.getElementById("avatar");
