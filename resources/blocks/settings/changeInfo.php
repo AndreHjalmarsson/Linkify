@@ -1,7 +1,4 @@
 <?php
-session_start();
-require("../../lib/functions.php");
-require("../../blocks/comps/header.php");
 
 $uid = $_SESSION["login"]["uid"];
 $users = dbGet($connection, "SELECT * FROM users WHERE id = '$uid';");
@@ -11,8 +8,7 @@ foreach($users as $user) {
 	$email = $user["email"];
 }
 
-require("../../blocks/comps/error.php");
-require("../../blocks/comps/message.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +19,7 @@ require("../../blocks/comps/message.php");
 		<title></title>
 	</head>
 	<body>
-		<form action="../../lib/settings.php" method="POST">
+		<form action="resources/lib/settings.php" method="POST">
 			<input type="hidden" name="action" value="changeInfo">
 			<input type="text" name="username" value="<?= $username; ?>">
 			<input type="email" name="email" value="<?= $email; ?>">

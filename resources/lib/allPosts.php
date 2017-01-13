@@ -47,13 +47,15 @@
 				}
 				 ?>
 				<br>
+				<?php if ($loggedIn) { ?>
 				<form action="resources/lib/insertComment.php" method="POST">
 					<input type="hidden" name="commentAction" value="createComment">
 					<textarea name="content" placeholder="Add your text here"></textarea>
 					<button type="submit">Comment</button>
 				</form>
+				<?php } ?>
 			</div>
-		<?php
+			<?php
 		}
 		votePosts($connection, $loggedIn);
 		?>

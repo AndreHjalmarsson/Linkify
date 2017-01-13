@@ -201,3 +201,11 @@ text-align: center;
     color: green;
 	 display: block;
 }
+.settingsBar {
+	display: inline-block;
+}
+.settingsContent {
+	display: inline-block;
+	margin-left: 200px;
+	margin-top: 100px;
+}
