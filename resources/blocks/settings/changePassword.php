@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <form action="resources/lib/settings.php" method="POST">
 	<input type="hidden" name="action" value="changePassword">
 	<input type="password" name="newPassword" placeholder="New password">

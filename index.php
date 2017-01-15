@@ -20,7 +20,7 @@ $loggedIn = checkLogin($connection);
             require("resources/blocks/home.php");
         } else {
 				require("resources/lib/allPosts.php");
-            require("resources/blocks/authentication.php");
+            // require("resources/blocks/authentication.php");
         }
 
 

@@ -31,7 +31,9 @@ $message = $_SESSION["message"] ?? "";
 						 <a href="/logout.php">Log out</a>
 					</div>
 				</div>
-			<?php } ?>
+			<?php } else {
+				require("resources/blocks/authentication.php");
+				} ?>
 	</div>
 	<div class="lowerHeader">
 		<h1>LINKIFY</h1>

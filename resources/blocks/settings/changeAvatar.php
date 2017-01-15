@@ -1,6 +1,5 @@
 <?php
 
-
 $uid = $_SESSION["login"]["uid"];
 $users = dbGet($connection, "SELECT * FROM users WHERE id = '$uid';");
 
@@ -19,7 +18,7 @@ foreach($users as $user) {
 	<body>
 		<form action="resources/lib/settings.php" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="action" value="changeAvatar">
-			<div class="placeholderAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $avatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
+			<div class="placeholderAvatar"><img src="/resources/img/users/<?= $uid ?>/<?= $avatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
 			<input type="file" name="avatar" accept="image/png, image/jpeg">
 
 			<input type="password" name="password">

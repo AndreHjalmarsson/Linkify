@@ -36,10 +36,18 @@
 					<p><?php countVotes($connection, $postid) ?></p>
 					<a href="/?vote=down&id=<?php echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 25px; height: 10px;" alt=""></a>
 				</div>
-				<div class="postAvatar"><img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
+				<div class="postAvatar">
+					<img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="">
+					<br>
+					<p><?= $postUsername ?></p>
+				</div>
 					<div class="postContent">
 						<h4><?= $postTitle; ?></h4> <br>
 						<a href="#"><?= $postContent; ?></a><br>
+					</div>
+					<div class="postWrapperRight">
+						<p><?= $postPublished ?></p>
+						<br>
 						<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
 					</div>
 				<br><br>

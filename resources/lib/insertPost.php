@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $uid = $_SESSION["login"]["uid"];
         $date = date("Y-m-d H:i:s");
 		  $title = $_POST["title"];
-        dbPost($connection, "INSERT INTO posts (uid, content, published, title) VALUES ('$uid', '$content', '$date', '$title')");
+		  $topic = mysqli_real_escape_string($connection, $_POST["topic"]);
+        dbPost($connection, "INSERT INTO posts (uid, content, published, title, topic) VALUES ('$uid', '$content', '$date', '$title', '$topic')");
         header("Location: /");
         die();
     }

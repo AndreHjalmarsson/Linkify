@@ -65,41 +65,50 @@ header {
 }
 .auth {
 	float: right;
-	width: 25%;
+	width: 65%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	margin-top: 30px;
 }
 
 .login {
 	float: right;
-	margin: 20px 0px 5px 0px;
+	margin: 6px 0px 5px 0px;
 	border: 2px solid #2B333E;
 	padding-bottom: 0px;
+	margin-left: auto;
 }
 .login button {
-	margin-right: 75px;
-	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	margin-top: 6px;
 }
 .login input {
-	/*background-color: #e6eeff;*/
-	margin: 5px;
+	margin: 2px;
 }
 .login label {
-	margin-bottom: 6px;
+	margin-bottom: 1px;
+	margin-top: 8px;
+	font-size: 12px;
 }
-
+.inputBox {
+	display: inline-block;
+	margin-top: 5px;
+}
 .registerLink {
 text-align: center;
+margin-right: 20px;
 }
-.registerLink {
-	font-size: 14px;
+.registerLink p {
+	font-size: 12px;
+	margin-top: 22px;
+	margin-left: 20px;
 }
-
 .register input {
 	margin: 5px;
 }
 .postContainer {
+	float: right;
 	display: inline-block;
 	margin-top: 50px;
 	margin-left: 30px;
@@ -128,11 +137,26 @@ text-align: center;
 	margin-bottom: 30px;
 }
 .postWrapper .postAvatar {
-	height: 55px;
-	width: 55px;
+	height: 75px;
+	width: 75px;
 	float: left;
 	margin-right: 15px;
 	display: inline-block;
+}
+.postContent h4 {
+	margin-bottom: 2px;
+}
+.postAvatar p {
+	margin: 0px;
+	margin-left: 7px;
+	font-size: 13px;
+}
+.postWrapperRight {
+	float: right;
+}
+.postWrapperRight p {
+	margin-top: 14px;
+	margin-right: 19px;
 }
 #content {
 	background-color: #12151A;
@@ -168,12 +192,11 @@ text-align: center;
 }
 .ownLinks {
 	float: right;
-	width: 30%;
 	margin-top: 30px;
 }
 .ownLinks a {
-	margin-right: 45px;
-	margin-left: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 .headerContainer {
 	width: 100%;
@@ -216,11 +239,12 @@ text-align: center;
 .dropdown {
 	display: inline-block;
 	margin-top: 37px;
-	margin-left: 70%;
-	position: fixed;
+	margin-right: 20px;
+	float: right;
 }
 #dropContent {
-
+	position: absolute;
+	background-color: white;
 }
 .dropdown-content a {
     color: green;
