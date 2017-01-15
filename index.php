@@ -15,12 +15,12 @@ $loggedIn = checkLogin($connection);
   <body>
 	  <?php
 	  require("resources/blocks/comps/header.php");
+	  require("resources/lib/topics.php");
 
 	  if ($loggedIn) {
             require("resources/blocks/home.php");
         } else {
 				require("resources/lib/allPosts.php");
-            // require("resources/blocks/authentication.php");
         }
 
 

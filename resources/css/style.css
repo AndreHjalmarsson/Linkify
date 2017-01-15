@@ -266,3 +266,7 @@ margin-right: 20px;
 	display: inline-block;
 	float: right;
 }
+.topics {
+	display: inline-block;
+	margin-top: 50px;
+}
