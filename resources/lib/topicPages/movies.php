@@ -5,35 +5,12 @@
 		<title></title>
 	</head>
 	<body>
-		<div class="postContainer">
-			<div class="postMenu">
-				<ul>
-					<li><a href="#" id="recent">Recent</a></li>
-					<li><a href="#" id="rating">Rating</a></li>
-					<li><a href="#" id="other">Other</a></li>
-				</ul>
-				<div class="ownLinks">
-					<a href="/resources/lib/myPosts.php">My own</a>
-					<a href="/resources/blocks/comps/writePost.php">New Post</a>
-				</div>
-			</div>
-		<div id="gamingId" class="hide">
-			<?php require("topicPages/gaming.php"); ?>
-		</div>
-		<div id="movieId" class="hide">
-			<?php require("topicPages/movies.php"); ?>
-		</div>
-		<div id="scienceId" class="hide">
-			<?php require("topicPages/science.php"); ?>
-		</div>
-		<div id="sportsId" class="hide">
-			<?php require("topicPages/sports.php"); ?>
-		</div>
-		<div class="recent">
-			<?php
-			$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
-			$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
+		<?php
+		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE posts.topic = 'Movies/Tv-series';");
+		$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
+		?>
 
+		<?php
 		foreach($postInfo as $post) {
 			$postContent = $post["content"];
 			$postTitle = $post["title"];
@@ -93,9 +70,5 @@
 		}
 		votePosts($connection, $loggedIn);
 		?>
-
-		</div>
-	</div>
-	<script src="resources/js/script.js"></script>
 	</body>
 </html>

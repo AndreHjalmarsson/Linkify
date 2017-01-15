@@ -5,8 +5,6 @@
 		<title></title>
 	</head>
 	<body>
-		<br>
-		<br>
 		<?php require("resources/lib/allPosts.php"); ?>
 	</body>
 </html>

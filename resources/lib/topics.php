@@ -11,12 +11,11 @@
 		 ?>
 		<div class="topics">
 			<ul>
-				<li><a href="#">Gaming</a></li>
-				<li><a href="#">Movies/Tv-series</a></li>
-				<li><a href="#">History</a></li>
-				<li><a href="#">Science</a></li>
-				<li><a href="#">Television</a></li>
-				<li><a href="#">Sport</a></li>
+				<li><a href="allTopics">All topics</a></li>
+				<li><a id="gaming" href="#">Gaming</a></li>
+				<li><a id ="movies"href="#">Movies/Tv-series</a></li>
+				<li><a href="science">Science</a></li>
+				<li><a href="sports">Sport</a></li>
 			</ul>
 		</div>
 	</body>

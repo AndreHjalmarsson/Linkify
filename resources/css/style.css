@@ -112,8 +112,8 @@ margin-right: 20px;
 	display: inline-block;
 	margin-top: 50px;
 	margin-left: 30px;
+	margin-right: 30px;
 	width: 66%;
-
 }
 .postWrapper {
 	height: 100px;
@@ -245,10 +245,7 @@ margin-right: 20px;
 #dropContent {
 	position: absolute;
 	background-color: white;
-}
-.dropdown-content a {
-    color: green;
-	 display: block;
+	color: green;
 }
 .settingsBar {
 	display: inline-block;
@@ -269,4 +266,14 @@ margin-right: 20px;
 .topics {
 	display: inline-block;
 	margin-top: 50px;
+	margin-left: 30px;
+	background-color: #14191E;
+	width: 20%;
+	font-size: 18px;
+}
+.topics ul {
+	list-style-type: none;
+}
+.topics li {
+	margin-top: 20px;
 }

@@ -30,10 +30,60 @@ let dropBtn = document.getElementById("dropBtn");
 let dropContent = document.getElementById("dropContent");
 
 dropBtn.addEventListener('click', function(event) {
-	if (dropContent.className === "dropdown-content") {
+	if (dropContent.className === "") {
 		dropContent.className = "hide";
 	} else if (dropContent.className === "hide") {
-		dropContent.className = "dropdown-content";
+		dropContent.className = "";
+	}
+
+});
+
+let gamingTag = document.getElementById("gaming");
+let moviesTag = document.getElementById("movies");
+let scienceTag = document.getElementById("science");
+let sportsTag = document.getElementById("sports");
+
+let gamingContent = document.getElementById("gamingId");
+let moviesContent = document.getElementById("movieId");
+let scienceContent = document.getElementById("scienceId");
+let sportsContent = document.getElementById("sportsId");
+
+gamingTag.addEventListener('click', function(event) {
+	if (gamingContent.className === "hide") {
+		gamingContent.className = "";
+		moviesContent.className = "hide";
+		scienceContent.className = "hide";
+		sportsContent.className = "hide";
+	}
+
+});
+
+moviesTag.addEventListener('click', function(event) {
+	if (moviesContent.className === "hide") {
+		moviesContent.className = "";
+		gamingContent.className = "hide";
+		scienceContent.className = "hide";
+		sportsContent.className = "hide";
+	}
+
+});
+
+scienceTag.addEventListener('click', function(event) {
+	if (scienceContent.className === "hide") {
+		scienceContent.className = "";
+		gamingContent.className = "hide";
+		moviesContent.className = "hide";
+		sportsContent.className = "hide";
+	}
+
+});
+
+sportsTag.addEventListener('click', function(event) {
+	if (sportsContent.className === "hide") {
+		sportsContent.className = "";
+		gamingContent.className = "hide";
+		moviesContent.className = "hide";
+		scienceContent.className = "hide";
 	}
 
 });

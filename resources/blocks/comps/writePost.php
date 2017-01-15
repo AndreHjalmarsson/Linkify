@@ -6,9 +6,7 @@
 	<select name="topic">
     <option value="Gaming">Gaming</option>
     <option value="Movies/Tv-series">Movies/Tv-series</option>
-    <option value="History">History</option>
     <option value="Science">Science</option>
-	 <option value="Television">Television</option>
     <option value="Sport">Sport</option>
   </select>
    <button type="submit">Post</button>
