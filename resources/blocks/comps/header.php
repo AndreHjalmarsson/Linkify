@@ -25,11 +25,11 @@ $message = $_SESSION["message"] ?? "";
 		</ul>
 			<?php if ($loggedIn) {?>
 				<div class="dropdown">
-					<button id="dropBtn">Dropdown</button>
-					  <div id="dropContent" class="hide">
-						  	<a href="/settings.php">Profile</a>
-							<a href="/logout.php">Log out</a>
-					  </div>
+					<a id="dropBtn" href="#"><img src="/resources/img/images/menubtn.png" style="width: 35px; height: 30px;" alt=""></a>
+					<div id="dropContent" class="hide">
+						 <a href="/settings.php">Profile</a>
+						 <a href="/logout.php">Log out</a>
+					</div>
 				</div>
 			<?php } ?>
 	</div>

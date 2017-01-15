@@ -12,6 +12,10 @@
 					<li><a href="#" id="rating">Rating</a></li>
 					<li><a href="#" id="other">Other</a></li>
 				</ul>
+				<div class="ownLinks">
+					<a href="/resources/lib/myPosts.php">My own</a>
+					<a href="/resources/blocks/comps/writePost.php">New Post</a>
+				</div>
 			</div>
 		<?php
 		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");

@@ -1,3 +1,3 @@
 <?php
-			require('../../../resources/lib/editPost.php');
-			 ?>
+						require('../../../resources/lib/editPost.php');
+						 ?>
