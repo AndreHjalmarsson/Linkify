@@ -21,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $uid = $_SESSION["login"]["uid"];
 		  $title = ($_POST["newTitle"]);
 		  $urlid = $_POST["urlid"];
+		  $topic = $_POST["newTopic"];
 
-		  if (!dbPost($connection, "UPDATE posts SET uid = '$uid', content = '$content', title = '$title' WHERE postid = '$urlid'")) {
+		  if (!dbPost($connection, "UPDATE posts SET uid = '$uid', content = '$content', title = '$title', topic = '$topic' WHERE postid = '$urlid'")) {
             $_SESSION["error"] = "Could not connect to the database, try again later.";
         } else {
             $_SESSION["message"] = "Success! Your changes has been registred.";

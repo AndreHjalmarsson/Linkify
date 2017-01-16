@@ -58,7 +58,7 @@ require("functions.php");
 					<div class="editPost">
 						<a href="editPostids/<?= $postid ?>.php">Edit Post</a>
 						<br>
-						<a href="#">Delete Post</a>
+						<a href="?delete=confirmed&id=<?= $postid ?>">Delete Post</a>
 						<?php
 						$myfile = fopen("editPostids/$postid.php", "w");
 						$txt = "<?php
