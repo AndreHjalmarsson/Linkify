@@ -18,18 +18,26 @@
 				</div>
 			</div>
 		<div id="gamingId" class="hide">
-			<?php require("topicPages/gaming.php"); ?>
+			<?php
+				require("topicPages/gaming.php");
+			?>
 		</div>
 		<div id="movieId" class="hide">
-			<?php require("topicPages/movies.php"); ?>
+			<?php
+				require("topicPages/movies.php");
+			?>
 		</div>
 		<div id="scienceId" class="hide">
-			<?php require("topicPages/science.php"); ?>
+			<?php
+				require("topicPages/science.php");
+			?>
 		</div>
 		<div id="sportsId" class="hide">
-			<?php require("topicPages/sports.php"); ?>
+			<?php
+				require("topicPages/sports.php");
+			?>
 		</div>
-		<div class="recent">
+		<div id="recentId" class="recent">
 			<?php
 			$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
 			$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");

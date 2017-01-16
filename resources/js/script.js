@@ -38,11 +38,13 @@ dropBtn.addEventListener('click', function(event) {
 
 });
 
+let recentTag = document.getElementById("recent");
 let gamingTag = document.getElementById("gaming");
 let moviesTag = document.getElementById("movies");
 let scienceTag = document.getElementById("science");
 let sportsTag = document.getElementById("sports");
 
+let recentContent = document.getElementById("recentId");
 let gamingContent = document.getElementById("gamingId");
 let moviesContent = document.getElementById("movieId");
 let scienceContent = document.getElementById("scienceId");
@@ -54,6 +56,7 @@ gamingTag.addEventListener('click', function(event) {
 		moviesContent.className = "hide";
 		scienceContent.className = "hide";
 		sportsContent.className = "hide";
+		recentContent.className = "hide";
 	}
 
 });
@@ -64,6 +67,7 @@ moviesTag.addEventListener('click', function(event) {
 		gamingContent.className = "hide";
 		scienceContent.className = "hide";
 		sportsContent.className = "hide";
+		recentContent.className = "hide";
 	}
 
 });
@@ -74,6 +78,7 @@ scienceTag.addEventListener('click', function(event) {
 		gamingContent.className = "hide";
 		moviesContent.className = "hide";
 		sportsContent.className = "hide";
+		recentContent.className = "hide";
 	}
 
 });
@@ -84,6 +89,18 @@ sportsTag.addEventListener('click', function(event) {
 		gamingContent.className = "hide";
 		moviesContent.className = "hide";
 		scienceContent.className = "hide";
+		recentContent.className = "hide";
+	}
+
+});
+
+recentTag.addEventListener('click', function(event) {
+	if (recentContent.className === "hide") {
+		recentContent.className = "";
+		gamingContent.className = "hide";
+		moviesContent.className = "hide";
+		scienceContent.className = "hide";
+		sportsContent.className = "hide";
 	}
 
 });

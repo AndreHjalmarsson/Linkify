@@ -12,12 +12,24 @@ require("functions.php");
 	<body>
 		<?php
 		require("../blocks/comps/header.php");
+		require("topics.php");
 		$uid = $_SESSION["login"]["uid"];
 
 		$posts = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE uid = '$uid' ORDER BY published DESC;");
 		$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
 		?>
 		<div class="postContainer">
+			<div class="postMenu">
+				<ul>
+					<li><a href="#" id="recent">Recent</a></li>
+					<li><a href="#" id="rating">Rating</a></li>
+					<li><a href="#" id="other">Other</a></li>
+				</ul>
+				<div class="ownLinks">
+					<a href="/resources/lib/myPosts.php">My own</a>
+					<a href="/resources/blocks/comps/writePost.php">New Post</a>
+				</div>
+			</div>
 
 			<?php
 			foreach($posts as $post) {
@@ -44,8 +56,9 @@ require("functions.php");
 							<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
 						</div>
 					<div class="editPost">
-						<a href="#">Delete Post</a>
 						<a href="editPostids/<?= $postid ?>.php">Edit Post</a>
+						<br>
+						<a href="#">Delete Post</a>
 						<?php
 						$myfile = fopen("editPostids/$postid.php", "w");
 						$txt = "<?php

@@ -2,12 +2,17 @@
 require("functions.php");
 
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$urlPostid = substr($url, -5, 1);
+echo $url;
+$urlPostid = substr($url, -6, 2);
+
 
 $posts = dbGet($connection, "SELECT * FROM posts WHERE postid = '$urlPostid';");
+
+
 foreach ($posts as $post) {
 	$currentContent = $post["content"];
 	$currentTitle = $post["title"];
+	$currentTopic = $post["topic"];
 }
 
 ?>
