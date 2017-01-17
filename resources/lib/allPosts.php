@@ -14,8 +14,8 @@
 				</ul>
 				<?php if ($loggedIn) { ?>
 				<div class="ownLinks">
-					<a href="/resources/lib/myPosts.php">My own</a>
-					<a href="/resources/blocks/comps/writePost.php">New Post</a>
+					<a href="/resources/lib/myPosts.php">My Posts</a>
+					<a href="/resources/blocks/comps/writePost.php">New Topic</a>
 				</div>
 				<?php } ?>
 			</div>
@@ -62,16 +62,16 @@
 				<div class="postAvatar">
 					<img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="">
 					<br>
-					<p><?= $postUsername ?></p>
+					<p><i><?= $postUsername ?></i></p>
 				</div>
 					<div class="postContent">
 						<h4><?= $postTitle; ?></h4> <br>
 						<a href="#"><?= $postContent; ?></a><br>
 					</div>
 					<div class="postWrapperRight">
-						<p><?= $postPublished ?></p>
+						<p><i><?= $postPublished ?></i></p>
 						<br>
-						<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
+						<a class="comments" href="#" data-post-id="<?= $postid ?>">comments</a>
 					</div>
 				<br><br>
 			</div>

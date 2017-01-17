@@ -21,9 +21,12 @@ foreach($users as $user) {
 	<body>
 		<form action="resources/lib/settings.php" method="POST">
 			<input type="hidden" name="action" value="changeInfo">
-			<input type="text" name="username" value="<?= $username; ?>">
-			<input type="email" name="email" value="<?= $email; ?>">
-			<input type="password" name="password">
+			Username:<input class="usernameInputStyle" type="text" name="username" value="<?= $username; ?>">
+			<br>
+			Email:<input class="profileInputStyle" type="email" name="email" value="<?= $email; ?>">
+			<br>
+			Verify:<input class="profileInputStyle" type="password" name="password" placeholder="Password">
+			<br>
 			<button type="submit">Save changes</button>
 		</form>
 

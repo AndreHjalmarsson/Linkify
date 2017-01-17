@@ -27,20 +27,20 @@ session_start();
 		}
 
 		?>
-		<div class="editForm">
+		<div class="editPostForm">
 			<form method="POST" action="/resources/lib/insertEditPost.php">
 				<input type="hidden" name="editAction" value="editPost">
 				<input type="hidden" name="urlid" value="<?= $urlPostid ?>">
-				<select name="newTopic" value="<?= $currentTopic ?>">
+				<select class="inputStyle" name="newTopic" value="<?= $currentTopic ?>">
 			    <option value="Gaming">Gaming</option>
 			    <option value="Movies/Tv-series">Movies/Tv-series</option>
 			    <option value="Science">Science</option>
 			    <option value="Sport">Sport</option>
 			  </select>
 			  <br>
-				<input type="text" name="newTitle" value="<?= $currentTitle ?>">
+				<input class="inputStyle" type="text" name="newTitle" value="<?= $currentTitle ?>">
 				<br>
-			   <textarea name="newContent"><?= $currentContent ?></textarea>
+			   <textarea class="inputStyle" rows="13" cols="80" name="newContent"><?= $currentContent ?></textarea>
 				<br>
 			   <button type="submit">Edit</button>
 			</form>

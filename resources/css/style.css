@@ -159,6 +159,8 @@ margin-right: 20px;
 .postWrapperRight p {
 	margin-top: 14px;
 	margin-right: 19px;
+	font-size: 14px;
+	color: grey;
 }
 #content {
 	background-color: #12151A;
@@ -206,7 +208,7 @@ margin-right: 20px;
 }
 .mainLinks li {
 	display: inline-block;
-	margin-top: 60px;
+	margin-top: 45px;
 	margin-left: 10px;
 
 }
@@ -252,6 +254,7 @@ margin-right: 20px;
 	transform: translate3d(0px,10px,0px);
    transition: transform 0.2s ease, opacity 0.2s ease;
 	border-radius: 4px;
+	box-shadow: 4px 4px 4px #12151A;
 }
 #dropContent a {
 	float: left;
@@ -260,13 +263,56 @@ margin-right: 20px;
 	overflow: hidden;
 	white-space: nowrap;
 }
-.settingsBar {
+.profileContainer {
 	display: inline-block;
+	width: 25%;
 }
+.settingsBar {
+	background-color: #14191E;
+	height: 150px;
+	margin-top: 10px;
+	margin-left: 50px;
+	padding: 10px;
+	padding-left: 20px;
+}
+
 .settingsContent {
 	display: inline-block;
+	background-color: #191D26;
+	width: 22%;
+	height: 300px;
 	margin-left: 200px;
-	margin-top: 100px;
+	padding: 20px;
+}
+.settingsContent form {
+	width: 100%;
+}
+.changeInfo form {
+	margin: auto;
+}
+.showProfile {
+	height: 200px;
+	background-color: #191D26;
+	margin-top: 80px;
+	margin-left: 50px;
+	padding: 10px;
+}
+.profileAvatar {
+	width: 140px;
+	height: 140px;
+	display: inline-block;
+}
+.profileInputStyle {
+	margin-left: 60px;
+	margin-bottom: 25px;
+}
+.usernameInputStyle {
+	margin-top: 15px;
+	margin-left: 26px;
+	margin-bottom: 25px;
+}
+.verify {
+	margin-top: 10px;
 }
 .myPostWrapper {
 	display: inline-block;
@@ -294,9 +340,24 @@ margin-right: 20px;
    margin-top: 20px;
    margin-right: 20px;
 }
-.editForm {
-margin-top: 40px;
-}
 .newPost {
+	width: 35%;
+	margin: auto;
+	margin-top: 100px;
+}
+.newPost form {
+	width: 100%;
+}
+.inputStyle {
+	border-radius: 5px;
+	margin: 0 auto;
+   display: block;
+}
+.editPost form {
+	width: 100%;
+}
+.editPostForm {
+	width: 35%;
+	margin: auto;
 	margin-top: 100px;
 }

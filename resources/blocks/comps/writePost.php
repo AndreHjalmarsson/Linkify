@@ -17,19 +17,20 @@ session_start();
 		<div class="newPost">
 			<form method="POST" action="/resources/lib/insertPost.php">
 				<input type="hidden" name="postAction" value="createPost">
-				<select name="topic">
+				<select class="inputStyle" name="topic">
 			    <option value="Gaming">Gaming</option>
 			    <option value="Movies/Tv-series">Movies/Tv-series</option>
 			    <option value="Science">Science</option>
 			    <option value="Sport">Sport</option>
 			  </select>
 			  <br>
-				<input type="text" name="title" placeholder="Add title">
+				<input class="inputStyle" type="text" name="title" placeholder="Add title">
 				<br>
-			   <textarea name="content" placeholder="Add your text here"></textarea>
+			   <textarea class="inputStyle" rows="13" cols="80" name="content" placeholder="Add your text here"></textarea>
 				<br>
 			   <button type="submit">Post</button>
 			</form>
 		</div>
+		<script src="/resources/js/edit.js"></script>
 	</body>
 </html>
