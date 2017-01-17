@@ -13,7 +13,7 @@ $message = $_SESSION["message"] ?? "";
 <header>
 	<div class="headerContainer">
 		<div class="logo">
-			<h1>L</h1>
+			<img src="/resources/img/images/logo.png" style="width: 40px; height: 35px;" alt=""></a>
 		</div>
 		<ul>
 			<div class="mainLinks">

@@ -15,6 +15,8 @@ $loggedIn = checkLogin($connection);
   <body>
 	  <?php
 	  require("resources/blocks/comps/header.php");
+	  require("resources/blocks/comps/error.php");
+     require("resources/blocks/comps/message.php");
 	  require("resources/lib/topics.php");
 
 	  if ($loggedIn) {
@@ -23,9 +25,6 @@ $loggedIn = checkLogin($connection);
 				require("resources/lib/allPosts.php");
         }
 
-
-	  require("resources/blocks/comps/error.php");
-     require("resources/blocks/comps/message.php");
 	   ?>
   </body>
 </html>

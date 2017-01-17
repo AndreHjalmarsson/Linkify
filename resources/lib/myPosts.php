@@ -26,8 +26,8 @@ require("functions.php");
 					<li><a href="#" id="other">Other</a></li>
 				</ul>
 				<div class="ownLinks">
-					<a href="/resources/lib/myPosts.php">My own</a>
-					<a href="/resources/blocks/comps/writePost.php">New Post</a>
+					<a href="/resources/lib/myPosts.php">My Posts</a>
+					<a href="/resources/blocks/comps/writePost.php">New Topic</a>
 				</div>
 			</div>
 

@@ -4,9 +4,6 @@ let comments = document.getElementsByClassName("comments");
 let content = document.getElementById("content");
 
 let myFunction = function() {
-	//  TODO: get the id from the clicked link
-	//  TODO: get all comments with classname and id
-	//  TODO: classlist toggle hide class
     if (content.className === "hide") {
 		 content.className = "";
 	 }

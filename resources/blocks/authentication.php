@@ -14,7 +14,7 @@
 	</div>
 	<div class="registerLink">
 		<p>Not a member? <br>
-		<a href="resources/lib/registerForm.php">Register</a>
+		<a href="/resources/lib/registerForm.php">Register</a>
 		</p>
 	</div>
 </div>
