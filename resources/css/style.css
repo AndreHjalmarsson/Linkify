@@ -119,9 +119,11 @@ margin-right: 20px;
 	height: 100px;
 	margin-bottom: 5px;
 	background-color: #191D26;
+	padding: 5px;
+	padding-left: 10px;
 }
 .voteWrapper {
-	background-color: #12151A;
+	background-color: #191D26;
 	display: inline-block;
 	float: left;
 	height: 100px;
@@ -160,8 +162,7 @@ margin-right: 20px;
 }
 #content {
 	background-color: #12151A;
-	width: 93%;
-	margin-left: 75px;
+	margin-left: 45px;
 	margin-bottom: 10px;
 }
 .commentWrapper {
@@ -177,13 +178,11 @@ margin-right: 20px;
 .postMenu {
 	background-color: #191D26;
 	height: 50px;
-	width: 96.3%;
 	margin-bottom: 7px;
-	margin-left: 40px;
 }
 .postMenu li {
 	display: inline-block;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-right: 35px;
 }
 .postMenu ul {
@@ -192,7 +191,7 @@ margin-right: 20px;
 }
 .ownLinks {
 	float: right;
-	margin-top: 30px;
+	margin-top: 20px;
 }
 .ownLinks a {
 	margin-left: 20px;
@@ -244,8 +243,22 @@ margin-right: 20px;
 }
 #dropContent {
 	position: absolute;
-	background-color: white;
-	color: green;
+	background-color: #14191E;
+	right: 0;
+	opacity: 4;
+	height: 100px;
+	width: 100px;
+	padding: 5px;
+	transform: translate3d(0px,10px,0px);
+   transition: transform 0.2s ease, opacity 0.2s ease;
+	border-radius: 4px;
+}
+#dropContent a {
+	float: left;
+	font-size: 17px;
+	margin-top: 6px;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .settingsBar {
 	display: inline-block;
@@ -283,4 +296,7 @@ margin-right: 20px;
 }
 .editForm {
 margin-top: 40px;
+}
+.newPost {
+	margin-top: 100px;
 }

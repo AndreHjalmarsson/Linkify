@@ -16,6 +16,10 @@
 				<li><a id="movies"href="#">Movies/Tv-series</a></li>
 				<li><a id="science" href="#">Science</a></li>
 				<li><a id="sports" href="#">Sport</a></li>
+				<li><a href="#">Politics</a></li>
+				<li><a href="#">Art</a></li>
+				<li><a href="#">Literature</a></li>
+				<li><a href="#">Music</a></li>
 			</ul>
 		</div>
 	</body>

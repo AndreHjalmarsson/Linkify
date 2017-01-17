@@ -28,6 +28,7 @@ $message = $_SESSION["message"] ?? "";
 					<a id="dropBtn" href="#"><img src="/resources/img/images/menubtn.png" style="width: 35px; height: 30px;" alt=""></a>
 					<div id="dropContent" class="hide">
 						 <a href="/settings.php">Profile</a>
+						 <br>
 						 <a href="/logout.php">Log out</a>
 					</div>
 				</div>

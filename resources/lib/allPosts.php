@@ -12,10 +12,12 @@
 					<li><a href="#" id="rating">Rating</a></li>
 					<li><a href="#" id="other">Other</a></li>
 				</ul>
+				<?php if ($loggedIn) { ?>
 				<div class="ownLinks">
 					<a href="/resources/lib/myPosts.php">My own</a>
 					<a href="/resources/blocks/comps/writePost.php">New Post</a>
 				</div>
+				<?php } ?>
 			</div>
 		<div id="gamingId" class="hide">
 			<?php

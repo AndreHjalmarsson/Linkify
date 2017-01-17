@@ -95,6 +95,7 @@ require("functions.php");
 				</div>
 				<?php
 			}
+			deletePosts($connection, $loggedIn);
 			votePosts($connection, $loggedIn);
 			?>
 

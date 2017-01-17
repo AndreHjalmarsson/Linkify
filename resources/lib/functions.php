@@ -195,3 +195,18 @@ function countVotes($connection, $postid)
 
 	echo $nrOfVotes;
 }
+
+function deletePosts($connection, $loggedIn)
+{
+	if (isset($_GET["delete"])) {
+		if ($_GET["delete"] === "confirmed") {
+			if ($loggedIn) {
+				$postId = $_GET["id"];
+
+				dbPost($connection, "DELETE FROM posts WHERE postid = '$postId';");
+			}
+		}
+		header("Location: /resources/lib/myPosts.php");
+		die();
+	}
+}
