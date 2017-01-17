@@ -151,6 +151,7 @@ margin-right: 20px;
 .postAvatar p {
 	margin: 0px;
 	margin-left: 7px;
+	margin-top: 6px;
 	font-size: 13px;
 }
 .postWrapperRight {
@@ -278,11 +279,14 @@ margin-right: 20px;
 
 .settingsContent {
 	display: inline-block;
+	position: absolute;
 	background-color: #191D26;
 	width: 22%;
-	height: 300px;
-	margin-left: 200px;
+	height: 363px;
+	margin-top: 80px;
+	margin-left: 120px;
 	padding: 20px;
+
 }
 .settingsContent form {
 	width: 100%;
@@ -308,11 +312,38 @@ margin-right: 20px;
 }
 .usernameInputStyle {
 	margin-top: 15px;
-	margin-left: 26px;
+	margin-left: 27px;
 	margin-bottom: 25px;
 }
-.verify {
-	margin-top: 10px;
+.passwordInputStyle {
+	margin-top: 45px;
+	margin-left: 30px;
+	margin-bottom: 25px;
+
+}
+.newPasswordStyle {
+	margin-top: 15px;
+	margin-left: 45px;
+	margin-bottom: 25px;
+}
+.repeatPasswordStyle {
+	margin-top: 15px;
+	margin-left: 27px;
+	margin-bottom: 25px;
+}
+.oldPasswordStyle {
+	margin-top: 45px;
+	margin-left: 52px;
+	margin-bottom: 25px;
+}
+.chooseFile {
+margin-top: 10px;
+margin-bottom: 15px;
+}
+.avatarPassword {
+	margin-top: 30px;
+	margin-left: 25px;
+	margin-bottom: 15px;
 }
 .myPostWrapper {
 	display: inline-block;

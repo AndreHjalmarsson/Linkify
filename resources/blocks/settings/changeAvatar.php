@@ -16,12 +16,19 @@ foreach($users as $user) {
 		<title></title>
 	</head>
 	<body>
+		<div class="avatarHead">
+			<h2>Avatar</h2>
+			<p>Change your profile picture</p>
+			<br>
+		</div>
 		<form action="resources/lib/settings.php" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="action" value="changeAvatar">
 			<div class="placeholderAvatar"><img src="/resources/img/users/<?= $uid ?>/<?= $avatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
-			<input type="file" name="avatar" accept="image/png, image/jpeg">
-
-			<input type="password" name="password">
+			<br>
+			<input class="chooseFile" type="file" name="avatar" accept="image/png, image/jpeg">
+			<br>
+			Password:<input class="avatarPassword" type="password" name="password">
+			<br>
 			<button type="submit">Save changes</button>
 
 		</form>
