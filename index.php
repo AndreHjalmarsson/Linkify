@@ -22,9 +22,11 @@ $loggedIn = checkLogin($connection);
 	  if ($loggedIn) {
             require("resources/blocks/home.php");
         } else {
-				require("resources/lib/allPosts.php");
-        }
+				require("resources/lib/allPosts.php"); ?>
+				<script src="resources/js/index.js"></script>
 
-	   ?>
+			<?php
+        }
+		  ?>
   </body>
 </html>

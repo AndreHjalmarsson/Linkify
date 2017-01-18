@@ -107,6 +107,10 @@
 
 		</div>
 	</div>
+	<?php
+	if ($loggedIn) {
+	 ?>
 	<script src="resources/js/script.js"></script>
+	<?php } ?>
 	</body>
 </html>
