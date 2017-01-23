@@ -1,3 +1,20 @@
+let comments = document.getElementsByClassName("comments");
+let content = document.getElementById("content");
+
+let myFunction = function() {
+    if (content.className === "hide") {
+		 content.className = "";
+	 }
+	 else {
+		 content.className = "hide";
+	 }
+};
+
+for (let i = 0; i < comments.length; i++) {
+    comments[i].addEventListener('click', myFunction, false);
+}
+
+
 let recentTag = document.getElementById("recent");
 let gamingTag = document.getElementById("gaming");
 let moviesTag = document.getElementById("movies");

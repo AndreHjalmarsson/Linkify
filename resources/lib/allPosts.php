@@ -19,26 +19,6 @@
 				</div>
 				<?php } ?>
 			</div>
-		<div id="gamingId" class="hide">
-			<?php
-				require("topicPages/gaming.php");
-			?>
-		</div>
-		<div id="movieId" class="hide">
-			<?php
-				require("topicPages/movies.php");
-			?>
-		</div>
-		<div id="scienceId" class="hide">
-			<?php
-				require("topicPages/science.php");
-			?>
-		</div>
-		<div id="sportsId" class="hide">
-			<?php
-				require("topicPages/sports.php");
-			?>
-		</div>
 		<div id="recentId" class="recent">
 			<?php
 			$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
@@ -55,12 +35,12 @@
 			?>
 			<div class="postWrapper">
 				<div class="voteWrapper">
-					<a href="/?vote=up&id=<?php echo $postid; ?>"><img id="upvote" src="/resources/img/images/uparrow.png" style="width: 25px; height: 10px;" alt=""></a>
+					<a href="/?vote=up&id=<?= echo $postid; ?>"><img id="upvote" src="/resources/img/images/uparrow.png" style="width: 25px; height: 10px;" alt=""></a>
 					<p><?php countVotes($connection, $postid) ?></p>
-					<a href="/?vote=down&id=<?php echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 25px; height: 10px;" alt=""></a>
+					<a href="/?vote=down&id=<?= echo $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 25px; height: 10px;" alt=""></a>
 				</div>
 				<div class="postAvatar">
-					<img src="/resources/img/users/<?php echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="">
+					<img src="/resources/img/users/<?= echo $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="">
 					<br>
 					<p><i><?= $postUsername ?></i></p>
 				</div>
@@ -71,7 +51,7 @@
 					<div class="postWrapperRight">
 						<p><i><?= $postPublished ?></i></p>
 						<br>
-						<a class="comments" href="#" data-post-id="<?= $postid ?>">comments</a>
+						<a class="comments" href="#">comments</a>
 					</div>
 				<br><br>
 			</div>
@@ -105,6 +85,26 @@
 		votePosts($connection, $loggedIn);
 		?>
 
+		</div>
+		<div id="gamingId" class="hide">
+			<?php
+				require("topicPages/gaming.php");
+			?>
+		</div>
+		<div id="movieId" class="hide">
+			<?php
+				require("topicPages/movies.php");
+			?>
+		</div>
+		<div id="scienceId" class="hide">
+			<?php
+				require("topicPages/science.php");
+			?>
+		</div>
+		<div id="sportsId" class="hide">
+			<?php
+				require("topicPages/sports.php");
+			?>
 		</div>
 	</div>
 	<?php

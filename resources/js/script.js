@@ -16,6 +16,7 @@ for (let i = 0; i < comments.length; i++) {
     comments[i].addEventListener('click', myFunction, false);
 }
 
+
 let rating = document.getElementById("rating");
 let posts = document.getElementById("postC");
 

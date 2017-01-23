@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<?php
-		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE posts.topic = 'Sports';");
+		$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE posts.topic = 'Sport';");
 		$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
 		?>
 
