@@ -1,6 +1,8 @@
 <?php
 session_start();
 require("functions.php");
+require("../blocks/comps/header.php");
+require("topics.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,8 +13,6 @@ require("functions.php");
 	</head>
 	<body>
 		<?php
-		require("../blocks/comps/header.php");
-		require("topics.php");
 		$uid = $_SESSION["login"]["uid"];
 
 		$posts = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE uid = '$uid' ORDER BY published DESC;");
