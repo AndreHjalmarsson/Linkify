@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ];
 				//Create cookie if remember box has been filled in.
             if (isset($_POST["remember"])) {
-                validateCookie($connection, $uid);
+                createLoginCookie($connection, $uid);
             }
         }
     } else {

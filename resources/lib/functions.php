@@ -91,6 +91,9 @@ function loginUser($connection, $userName, $password)
 
 function validateCookie($connection)
 {
+	if (!isset($_COOKIE["linkify"])) {
+		return false;
+	}
     $values = explode("|", $_COOKIE["linkify"]);
     $entry = dbGet($connection, "SELECT uid FROM tokens WHERE uid = '$values[1]' AND one = '$values[0]' AND two = '$values[2]' AND expire >= NOW()", true);
     return ($entry) ? $entry["uid"]:false;
@@ -112,6 +115,17 @@ function checkLogin($connection)
         ];
     }
     return true;
+}
+
+function createLoginCookie($connection, $uid)
+{
+    $first = bin2hex(random_bytes(64));
+    $second = bin2hex(random_bytes(128));
+    $cookie = "$first|$uid|$second";
+    $timestamp = time() + 60 * 60 * 24 * 30;
+    $expire = date("Y-m-d H:i:s", $timestamp);
+    dbPost($connection, "INSERT INTO tokens (uid, one, second, expire) VALUES ('$uid', '$first', '$second', '$expire')");
+    setcookie("linkify", $cookie, $timestamp, "/", "", false, true);
 }
 
 // Get the corresponding user info when user has been logged in
@@ -204,10 +218,9 @@ function deletePosts($connection, $loggedIn)
 				$postId = $_GET["id"];
 
 				dbPost($connection, "DELETE FROM posts WHERE postid = '$postId';");
-
+				header("Location: /resources/lib/myPosts.php");
+				die();
 			}
 		}
 	}
-	header("Location: /resources/lib/myPosts.php");
-	die();
 }
