@@ -32,7 +32,7 @@ require("resources/lib/functions.php");
 		<div class="profileContainer">
 			<div class="showProfile">
 				<div class="profileAvatar">
-					<img src="/resources/img/users/<?php echo $uid ?>/<?php echo $avatar; ?>" style="width: 100%; height: 100%;" alt="">
+					<img src="/resources/img/users/<?php echo $uid ?>/<?php echo $avatar; ?>" style="width: 100%; height: 100%;" alt="No avatar chosen">
 
 				</div>
 			</div>

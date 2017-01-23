@@ -39,7 +39,7 @@
 					<a href="/?vote=down&id=<?= $postid; ?>"><img id="downvote" src="/resources/img/images/downarrow.png" style="width: 25px; height: 10px;" alt=""></a>
 				</div>
 				<div class="postAvatar">
-					<img src="/resources/img/users/<?= $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="">
+					<img src="/resources/img/users/<?= $uid ?>/<?php echo $postAvatar; ?>" style="width: 100%; height: 100%;" alt="No avatar chosen">
 					<br>
 					<p><i><?= $postUsername ?></i></p>
 				</div>
@@ -76,9 +76,9 @@
 				<form action="resources/lib/insertComment.php" method="POST">
 					<input type="hidden" name="commentAction" value="createComment">
 					<input type="hidden" name="postId" value="<?= $postid ?>">
-					<textarea name="content" placeholder="Add your text here"></textarea>
+					<textarea class="commentInput" name="content" placeholder="Add your text here"></textarea>
 					<br>
-					<button type="submit">Comment</button>
+					<button class="commentInput" type="submit">Comment</button>
 				</form>
 				<?php } ?>
 			</div>

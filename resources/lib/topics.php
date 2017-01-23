@@ -5,10 +5,6 @@
 		<title></title>
 	</head>
 	<body>
-		<?php
-		$postInfo = dbGet($connection, "SELECT topic FROM posts;");
-
-		 ?>
 		<div class="topics">
 			<ul>
 				<li><a id="allTopics" href="/">All topics</a></li>

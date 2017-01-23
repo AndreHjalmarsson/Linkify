@@ -7,7 +7,6 @@ require("topics.php");
 $uid = $_SESSION["login"]["uid"];
 
 $posts = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid WHERE uid = '$uid' ORDER BY published DESC;");
-$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,12 +51,12 @@ $commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON us
 						<div class="postContent">
 							<h4><?= $postTitle; ?></h4> <br>
 							<a href="#"><?= $postContent; ?></a><br>
-							<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
 						</div>
 					<div class="editPost">
 						<a href="editPostids/<?= $postid ?>.php">Edit Post</a>
 						<br>
 						<a href="?delete=confirmed&id=<?= $postid ?>">Delete Post</a>
+						<br>
 						<?php
 						$myfile = fopen("editPostids/$postid.php", "w");
 						$txt = "<?php
@@ -66,10 +65,12 @@ $commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON us
 						fwrite($myfile, $txt);
 						fclose($myfile);
 						?>
+						<a id="<?= $postid ?>" class="comments" href="#">comments</a>
 					</div>
 				</div>
-				<div id="content" class="hide">
+				<div id="content-<?= $postid ?>" class="hide">
 					<?php
+					$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid WHERE comments.post_id = $postid ORDER BY published DESC;");
 					foreach ($commentInfo as $comments) {
 						$commentUid = $comments["uid"];
 						$commentAvatar = $comments["avatar"];
@@ -85,10 +86,12 @@ $commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON us
 					 ?>
 					<br>
 					<?php if ($loggedIn) { ?>
-					<form action="resources/lib/insertComment.php" method="POST">
+					<form action="insertComment.php" method="POST">
 						<input type="hidden" name="commentAction" value="createComment">
-						<textarea name="content" placeholder="Add your text here"></textarea>
-						<button type="submit">Comment</button>
+						<input type="hidden" name="postId" value="<?= $postid ?>">
+						<textarea class="commentInput" name="content" placeholder="Add your text here"></textarea>
+						<br>
+						<button class="commentInput" type="submit">Comment</button>
 					</form>
 					<?php } ?>
 				</div>
