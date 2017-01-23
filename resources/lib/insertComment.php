@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die();
         }
 
-		  $post_id = dbGet($connection, "SELECT postid FROM posts");
+		  $post_id = $_POST["postId"];
 		  $content = mysqli_real_escape_string($connection, $_POST["content"]);
         $uid = $_SESSION["login"]["uid"];
         $date = date("Y-m-d H:i:s");

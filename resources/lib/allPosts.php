@@ -22,7 +22,6 @@
 		<div id="recentId" class="recent">
 			<?php
 			$postInfo = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = posts.uid ORDER BY published DESC;");
-			$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid ORDER BY published DESC;");
 
 		foreach($postInfo as $post) {
 			$postContent = $post["content"];
@@ -51,12 +50,14 @@
 					<div class="postWrapperRight">
 						<p><i><?= $postPublished ?></i></p>
 						<br>
-						<a class="comments" href="#">comments</a>
+						<a id="<?= $postid ?>" class="comments" href="#">comments</a>
 					</div>
 				<br><br>
 			</div>
-			<div id="content" class="hide">
+			<div id="content-<?= $postid ?>" class="hide">
 				<?php
+				$commentInfo = dbGet($connection, "SELECT * FROM comments INNER JOIN users ON users.id = comments.uid WHERE comments.post_id = $postid ORDER BY published DESC;");
+
 				foreach ($commentInfo as $comments) {
 					$commentUid = $comments["uid"];
 					$commentAvatar = $comments["avatar"];
@@ -74,6 +75,7 @@
 				<?php if ($loggedIn) { ?>
 				<form action="resources/lib/insertComment.php" method="POST">
 					<input type="hidden" name="commentAction" value="createComment">
+					<input type="hidden" name="postId" value="<?= $postid ?>">
 					<textarea name="content" placeholder="Add your text here"></textarea>
 					<br>
 					<button type="submit">Comment</button>

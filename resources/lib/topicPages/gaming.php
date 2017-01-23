@@ -38,11 +38,11 @@
 					<div class="postWrapperRight">
 						<p><?= $postPublished ?></p>
 						<br>
-						<a class="comments" href="#" data-post-id="<?= $uid ?>">comments</a>
+						<a id="<?= $postid ?>" class="comments" href="#">comments</a>
 					</div>
 				<br><br>
 			</div>
-			<div id="content" class="hide">
+			<div id="content-<?= $postid ?>" class="hide">
 				<?php
 				foreach ($commentInfo as $comments) {
 					$commentUid = $comments["uid"];
