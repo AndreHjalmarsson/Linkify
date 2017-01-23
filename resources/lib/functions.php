@@ -204,9 +204,10 @@ function deletePosts($connection, $loggedIn)
 				$postId = $_GET["id"];
 
 				dbPost($connection, "DELETE FROM posts WHERE postid = '$postId';");
+
+				header("Location: /resources/lib/myPosts.php");
+				die();
 			}
 		}
-		header("Location: /");
-		die();
 	}
 }
