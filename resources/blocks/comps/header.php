@@ -23,7 +23,7 @@ $message = $_SESSION["message"] ?? "";
 				<li><a href="#">STORE</a></li>
 			</div>
 		</ul>
-			<?php if ($loggedIn) {?>
+			<?php if (isset($loggedIn)) {?>
 				<div class="dropdown">
 					<a id="dropBtn" href="#"><img src="/resources/img/images/menubtn.png" style="width: 35px; height: 30px;" alt=""></a>
 					<div id="dropContent" class="hide">
