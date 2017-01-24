@@ -147,6 +147,7 @@ function validateUserPassword($connection, $uid, $password)
     return password_verify($password, $hash);
 }
 
+//Creates a function for the names of the avatars uploaded to the database so they cant interfere with each other.
 function imageName ($length = 32)
 {
     $string = "";
@@ -169,6 +170,7 @@ function uploadImage ($connection, $imageInfo, $type, $uid)
     }
 }
 
+//Function posts vote data to the database based on the _GET request.
 function votePosts($connection, $loggedIn)
 {
 	if (isset($_GET["vote"])) {
@@ -192,7 +194,7 @@ function votePosts($connection, $loggedIn)
 	}
 }
 
-
+//Counts the upvotes from one table and downvotes from another to get the proper reslut for each post.
 function countVotes($connection, $postid)
 {
    $upvotes = dbGet($connection, "SELECT COUNT(post_id) FROM upvote WHERE post_id = '$postid'");
@@ -210,6 +212,7 @@ function countVotes($connection, $postid)
 	echo $nrOfVotes;
 }
 
+//Deletes a post based on a _GET request
 function deletePosts($connection, $loggedIn)
 {
 	if (isset($_GET["delete"])) {

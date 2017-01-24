@@ -13,12 +13,10 @@ session_start();
 		require("functions.php");
 		require("../../../resources/blocks/comps/header.php");
 
+		// Gets the post id from the url by getting the proper characters in the string
 		$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		$urlPostid = substr($url, -6, 2);
-
-
 		$posts = dbGet($connection, "SELECT * FROM posts WHERE postid = '$urlPostid';");
-
 
 		foreach ($posts as $post) {
 			$currentContent = $post["content"];
@@ -27,6 +25,7 @@ session_start();
 		}
 
 		?>
+		<!-- Form for editing a post -->
 		<div class="editPostForm">
 			<form method="POST" action="/resources/lib/insertEditPost.php">
 				<input type="hidden" name="editAction" value="editPost">

@@ -23,6 +23,7 @@ $message = $_SESSION["message"] ?? "";
 				<li><a href="#">STORE</a></li>
 			</div>
 		</ul>
+		<!-- Setting the menu button to show only if logged in -->
 			<?php if ($loggedIn) {?>
 				<div class="dropdown">
 					<a id="dropBtn" href="#"><img src="/resources/img/images/menubtn.png" style="width: 35px; height: 30px;" alt=""></a>
@@ -32,6 +33,7 @@ $message = $_SESSION["message"] ?? "";
 						 <a href="/logout.php">Log out</a>
 					</div>
 				</div>
+				<!-- Shows log in form only if not logged in -->
 			<?php } else {
 				require("resources/blocks/authentication.php");
 				} ?>

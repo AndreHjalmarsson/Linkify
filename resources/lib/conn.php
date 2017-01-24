@@ -20,7 +20,7 @@ function dbGet($connection, $query, $single = false)
     return $data;
 }
 
-// Creating the function for putting data into the databse. Success returns true and failure false.
+// Creating the function for putting data into the database. Success returns true and failure false.
 function dbPost($connection, $query)
 {
     return mysqli_query($connection, $query);

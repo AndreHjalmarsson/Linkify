@@ -5,6 +5,7 @@
 		<title></title>
 	</head>
 	<body>
+		<!-- requires posts if logged in -->
 		<?php require("resources/lib/allPosts.php"); ?>
 	</body>
 </html>

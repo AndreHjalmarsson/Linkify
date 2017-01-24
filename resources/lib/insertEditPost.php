@@ -10,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $action = $_POST["editAction"];
+	 //  Checks that the hidden input field matches the requires activity
     if ($action === "editPost") {
+		 //  Checks that post content and title both have values
         if (empty($_POST["newContent"]) || empty($_POST["newTitle"])) {
             $_SESSION["error"] = "Something missing.";
             header("Location: /");
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		  $title = ($_POST["newTitle"]);
 		  $urlid = $_POST["urlid"];
 		  $topic = $_POST["newTopic"];
-
+		  //   Inserts post information to the database with an update on the current table
 		  if (!dbPost($connection, "UPDATE posts SET uid = '$uid', content = '$content', title = '$title', topic = '$topic' WHERE postid = '$urlid'")) {
             $_SESSION["error"] = "Could not connect to the database, try again later.";
         } else {

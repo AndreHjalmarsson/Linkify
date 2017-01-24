@@ -58,6 +58,7 @@ $posts = dbGet($connection, "SELECT * FROM posts INNER JOIN users ON users.id = 
 						<a href="?delete=confirmed&id=<?= $postid ?>">Delete Post</a>
 						<br>
 						<?php
+						// Creates a new page if edit post link has been clicked, where editPost page is required with form for editing the post
 						$myfile = fopen("editPostids/$postid.php", "w");
 						$txt = "<?php
 						require('../../../resources/lib/editPost.php');

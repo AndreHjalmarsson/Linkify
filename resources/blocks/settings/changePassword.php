@@ -10,6 +10,7 @@
 			<p>Change your password</p>
 			<br><br>
 		</div>
+		<!-- Form for changing password -->
 		<form action="resources/lib/settings.php" method="POST">
 			<input type="hidden" name="action" value="changePassword">
 			New password:<input class="newPasswordStyle" type="password" name="newPassword" placeholder="New password">

@@ -40,6 +40,7 @@
 
 		<div class="register">
 			<h2>Sign up for Linkify</h2>
+			<!-- Form for registration -->
 			<form action="/resources/lib/register.php" method="POST">
 				<input class="registerStyle" type="text" name="fullname" placeholder="Full name"><br>
 				<input class="registerStyle" type="text" name="username" placeholder="Username"><br>

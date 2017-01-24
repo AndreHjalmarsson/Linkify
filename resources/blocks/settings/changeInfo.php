@@ -23,6 +23,7 @@ foreach($users as $user) {
 			<p>Change your profile information</p>
 			<br><br>
 		</div>
+		<!-- Form for changing standard info -->
 		<form action="resources/lib/settings.php" method="POST">
 			<input type="hidden" name="action" value="changeInfo">
 			Username:<input class="usernameInputStyle" type="text" name="username" value="<?= $username; ?>">

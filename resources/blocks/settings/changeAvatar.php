@@ -21,6 +21,7 @@ foreach($users as $user) {
 			<p>Change your profile picture</p>
 			<br>
 		</div>
+		<!-- Form for changing avatar -->
 		<form action="resources/lib/settings.php" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="action" value="changeAvatar">
 			<div class="placeholderAvatar"><img src="/resources/img/users/<?= $uid ?>/<?= $avatar; ?>" style="width: 100%; height: 100%;" alt=""></div>
