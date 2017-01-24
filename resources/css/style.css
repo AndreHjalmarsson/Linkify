@@ -187,15 +187,11 @@ button.registerStyle {
 	font-size: 14px;
 	color: grey;
 }
-#content {
-	background-color: #12151A;
-	margin-left: 45px;
-	margin-bottom: 10px;
-}
+
 .commentWrapper {
-	width: 100%;
 	background-color: #191D26;
 	margin-top: 8px;
+   margin-left: 45px;
 }
 .commentAvatar {
 	height: 20px;

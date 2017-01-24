@@ -1,7 +1,9 @@
 let comments = document.getElementsByClassName("comments");
-let content = document.getElementById("content");
 
-let myFunction = function() {
+let myFunction = function(id) {
+
+	let content = document.getElementById("content-"+id);
+
     if (content.className === "hide") {
 		 content.className = "";
 	 }
@@ -11,9 +13,8 @@ let myFunction = function() {
 };
 
 for (let i = 0; i < comments.length; i++) {
-    comments[i].addEventListener('click', myFunction, false);
+    comments[i].addEventListener('click', () => myFunction(comments[i].id), false);
 }
-
 
 let recentTag = document.getElementById("recent");
 let gamingTag = document.getElementById("gaming");
